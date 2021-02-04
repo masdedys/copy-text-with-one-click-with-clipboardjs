@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<!-- Trigger -->
+<h2 class="text-center">Salin Teks</h2>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="isi disini" id="foo">
+    <span class="input-group-text" id="basic-addon2">
+        <button class="btn" data-clipboard-target="#foo">
+            <img src="clipboard.svg" alt="Copy to clipboard" width="30" height="30" >
+        </button>
+    </span>
+  </div>
+<script src="clipboard.js-master/dist/clipboard.min.js"></script>
+<script> 
+    var clipboard = new ClipboardJS('.btn');
+
+    clipboard.on('success', function(e) {
+        alert("Telah tersalin");
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+        alert("Gagal tersalin");
+    });
+</script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+</html>
